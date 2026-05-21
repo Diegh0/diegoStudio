@@ -110,7 +110,7 @@ function Navbar() {
     >
       <div
         className="mx-auto flex items-center justify-between"
-        style={{ maxWidth: '1280px', padding: '1.1rem clamp(1rem, 4vw, 3rem)' }}
+        style={{ maxWidth: '1280px', padding: '0.35rem clamp(1rem, 4vw, 3rem)' }}
       >
         {/* Marca */}
         <a href="#" style={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
