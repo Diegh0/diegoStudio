@@ -102,9 +102,10 @@ function Navbar() {
     <nav
       className="fixed top-0 left-0 right-0 z-20"
       style={{
-        backdropFilter: 'blur(12px)',
-        WebkitBackdropFilter: 'blur(12px)',
-        borderBottom: '1px solid rgba(201,168,76,0.06)',
+        backgroundColor: 'rgba(8, 7, 6, 0.65)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        borderBottom: '1px solid rgba(201,168,76,0.08)',
       }}
     >
       <div
