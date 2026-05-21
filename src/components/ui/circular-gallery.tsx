@@ -22,10 +22,12 @@ interface CircularGalleryProps extends HTMLAttributes<HTMLDivElement> {
   radius?: number;
   autoRotateSpeed?: number;
   onItemClick?: (item: GalleryItem) => void;
+  cardWidth?: number;
+  cardHeight?: number;
 }
 
 const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
-  ({ items, className, radius = 600, autoRotateSpeed = 0.02, onItemClick, ...props }, ref) => {
+  ({ items, className, radius = 600, autoRotateSpeed = 0.02, onItemClick, cardWidth = 300, cardHeight = 400, ...props }, ref) => {
     const [rotation, setRotation] = useState(0);
     const [isScrolling, setIsScrolling] = useState(false);
     const [isDragging, setIsDragging] = useState(false);
@@ -149,13 +151,15 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                 key={item.photo.url}
                 role="group"
                 aria-label={item.common}
-                className="absolute w-[300px] h-[400px]"
+                className="absolute"
                 style={{
+                  width: `${cardWidth}px`,
+                  height: `${cardHeight}px`,
                   transform: `rotateY(${itemAngle}deg) translateZ(${radius}px)`,
                   left: '50%',
                   top: '50%',
-                  marginLeft: '-150px',
-                  marginTop: '-200px',
+                  marginLeft: `${-(cardWidth / 2)}px`,
+                  marginTop: `${-(cardHeight / 2)}px`,
                   opacity,
                   transition: isDragging ? 'none' : 'opacity 0.3s linear',
                   userSelect: 'none',

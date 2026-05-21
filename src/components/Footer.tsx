@@ -14,6 +14,7 @@ export default function Footer() {
       }}
     >
       <div
+        className="footer-inner"
         style={{
           maxWidth: "1280px",
           margin: "0 auto",
@@ -26,7 +27,7 @@ export default function Footer() {
       >
         {/* Marca */}
         <a href="#" style={{ display: "flex", alignItems: "center" }}>
-          <img src={Logo} alt="DiegoStudio" style={{ height: "90px", width: "auto" }} />
+          <img src={Logo} alt="DiegoStudio" style={{ height: "clamp(50px, 8vw, 90px)", width: "auto" }} />
         </a>
 
         {/* Email */}

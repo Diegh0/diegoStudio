@@ -265,4 +265,15 @@ body {
   .work-grid > * {
     grid-column: 1 / -1 !important;
   }
+
+  .footer-inner {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+  }
+
+  .email-link {
+    word-break: break-all;
+    font-size: clamp(0.85rem, 4vw, 1.5rem) !important;
+  }
 }

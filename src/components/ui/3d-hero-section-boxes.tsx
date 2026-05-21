@@ -114,7 +114,7 @@ function Navbar() {
       >
         {/* Marca */}
         <a href="#" style={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
-          <img src={Logo} alt="DiegoStudio" style={{ height: '110px', width: 'auto' }} />
+          <img src={Logo} alt="DiegoStudio" style={{ height: 'clamp(60px, 10vw, 110px)', width: 'auto' }} />
         </a>
 
         {/* Nav links — oculto en móvil muy pequeño */}

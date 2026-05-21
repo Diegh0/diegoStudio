@@ -167,9 +167,27 @@ function useGalleryRadius() {
   return radius;
 }
 
+function useCardSize() {
+  const [size, setSize] = useState({ width: 300, height: 400 });
+  useEffect(() => {
+    const update = () => {
+      const w = window.innerWidth;
+      if (w < 480) setSize({ width: 180, height: 240 });
+      else if (w < 768) setSize({ width: 210, height: 290 });
+      else if (w < 1024) setSize({ width: 250, height: 330 });
+      else setSize({ width: 300, height: 400 });
+    };
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+  return size;
+}
+
 export default function Work() {
   const [activeProject, setActiveProject] = useState<GalleryItem | null>(null);
   const galleryRadius = useGalleryRadius();
+  const cardSize = useCardSize();
 
   return (
     <>
@@ -191,6 +209,8 @@ export default function Work() {
               radius={galleryRadius}
               autoRotateSpeed={0.015}
               onItemClick={item => item.liveUrl ? setActiveProject(item) : undefined}
+              cardWidth={cardSize.width}
+              cardHeight={cardSize.height}
             />
           </div>
         </div>
