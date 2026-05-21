@@ -9,10 +9,11 @@ import phyosCenterProject from "@/assets/images/phyosCenterProject.png";
 
 const galleryItems: GalleryItem[] = [
   {
-    common: "Enova",
-    binomial: "Landing Page · Conversión",
-    description: "Landing page para Enova Inmobiliaria. Diseño enfocado en conversión y cada propiedad publicada incluye la opción de visualizarla reformada gracias a un generador de IA integrado.",
+    common: "Inmobiliaria",
+    binomial: "Plantilla · Inmobiliaria",
+    description: "Plantilla lista para cualquier inmobiliaria. Diseño enfocado en conversión, ficha de propiedades y llamada a la acción directa para captar contactos.",
     liveUrl: "https://enova-rosy.vercel.app/",
+    isTemplate: true,
     photo: {
       url: EnovaProject,
       text: "Enova project cover",
@@ -22,9 +23,10 @@ const galleryItems: GalleryItem[] = [
   },
   {
     common: "Casa de Comidas",
-    binomial: "Diseño Web · Hostelería · Plantilla",
-    description: "Diseño listo para cualquier casa de comidas. Incluye reservas online y panel de administrador donde el dueño ve en tiempo real los pedidos por franjas horarias. Disponible para compra y adaptación a tu negocio.",
+    binomial: "Plantilla · Hostelería",
+    description: "Plantilla lista para cualquier casa de comidas. Incluye reservas online y panel de administrador donde el dueño ve en tiempo real los pedidos por franjas horarias. Adaptable a tu negocio.",
     liveUrl: "https://casa-comidas.vercel.app/",
+    isTemplate: true,
     photo: {
       url: casaComidasProject,
       text: "Casa de Comidas project cover",
@@ -34,9 +36,10 @@ const galleryItems: GalleryItem[] = [
   },
   {
     common: "Döner Kebab",
-    binomial: "Diseño Web · Hostelería",
-    description: "Web para negocio de hostelería. Diseño apetecible y directo al grano, con menú visible, información de contacto clara y llamada a la acción para atraer clientes desde el primer vistazo.",
+    binomial: "Plantilla · Hostelería",
+    description: "Plantilla para negocio de hostelería. Diseño apetecible y directo al grano, con menú visible, información de contacto clara y llamada a la acción para atraer clientes desde el primer vistazo.",
     liveUrl: "https://doner-kebab-six.vercel.app/",
+    isTemplate: true,
     photo: {
       url: donerKebabProject,
       text: "Döner Kebab project cover",
@@ -46,9 +49,10 @@ const galleryItems: GalleryItem[] = [
   },
   {
     common: "Fotógrafo",
-    binomial: "Portfolio · Fotografía",
-    description: "Portfolio visual para fotógrafo profesional. Galería limpia y elegante que pone el foco en el trabajo, genera confianza y facilita la contratación directa.",
+    binomial: "Plantilla · Portfolio",
+    description: "Plantilla de portfolio para fotógrafo profesional. Galería limpia y elegante que pone el foco en el trabajo, genera confianza y facilita la contratación directa.",
     liveUrl: "https://fotografo2-one.vercel.app/",
+    isTemplate: true,
     photo: {
       url: fotografo2Project,
       text: "Fotógrafo project cover",
@@ -112,6 +116,23 @@ function ProjectModal({ item, onClose }: { item: GalleryItem; onClose: () => voi
           <h3 style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(1.5rem, 4vw, 2rem)", fontWeight: 600, color: "#F2EDE4", lineHeight: 1.1, marginBottom: "0.875rem" }}>
             {item.common}
           </h3>
+          {item.isTemplate && (
+            <div style={{
+              display: "flex",
+              alignItems: "flex-start",
+              gap: "0.6rem",
+              background: "rgba(201,168,76,0.05)",
+              border: "1px solid rgba(201,168,76,0.15)",
+              borderRadius: "4px",
+              padding: "0.75rem 1rem",
+              marginBottom: "1rem",
+            }}>
+              <span style={{ color: "#C9A84C", fontSize: "0.75rem", lineHeight: 1, marginTop: "1px", flexShrink: 0 }}>⚑</span>
+              <p style={{ color: "#8C8680", fontSize: "0.75rem", lineHeight: 1.6, margin: 0 }}>
+                Este proyecto es una <span style={{ color: "#C9A84C" }}>plantilla de demostración</span> y no está asignado a ningún negocio real. Disponible para adaptación.
+              </p>
+            </div>
+          )}
           {item.description && (
             <p style={{ color: "#8C8680", fontSize: "0.875rem", lineHeight: 1.75, marginBottom: "1.5rem" }}>
               {item.description}

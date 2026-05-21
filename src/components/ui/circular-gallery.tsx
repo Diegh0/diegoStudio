@@ -9,6 +9,7 @@ export interface GalleryItem {
   binomial: string;
   description?: string;
   liveUrl?: string;
+  isTemplate?: boolean;
   photo: {
     url: string;
     text: string;
@@ -185,6 +186,24 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                     style={{ objectPosition: item.photo.pos || 'center', pointerEvents: 'none' }}
                     draggable={false}
                   />
+                  {item.isTemplate && (
+                    <div
+                      className="absolute top-3 left-3"
+                      style={{
+                        fontSize: '0.6rem',
+                        letterSpacing: '0.12em',
+                        textTransform: 'uppercase',
+                        background: 'rgba(8,7,6,0.75)',
+                        border: '1px solid rgba(201,168,76,0.35)',
+                        color: '#C9A84C',
+                        padding: '0.2rem 0.5rem',
+                        borderRadius: '2px',
+                        backdropFilter: 'blur(4px)',
+                      }}
+                    >
+                      Plantilla
+                    </div>
+                  )}
                   <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent text-white">
                     <h2 className="text-xl font-bold">{item.common}</h2>
                     <em className="text-sm italic opacity-80">{item.binomial}</em>

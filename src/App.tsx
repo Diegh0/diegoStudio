@@ -2,6 +2,7 @@ import { HeroSection } from "@/components/ui/3d-hero-section-boxes";
 import Work from "@/components/Work";
 import Services from "@/components/Services";
 import Contact from "@/components/Contact";
+import TrustedBy from "@/components/TrustedBy";
 import Footer from "@/components/Footer";
 import { MessageCircle } from "lucide-react";
 
@@ -53,6 +54,7 @@ export default function App() {
         <Work />
         <Services />
         <Contact />
+        <TrustedBy />
       </main>
       <Footer />
       <WhatsAppButton />
